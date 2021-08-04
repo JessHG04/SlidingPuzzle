@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class Tile : MonoBehaviour {
+    public int id;
     private Vector3 _targetPosition;
     private Vector3 _correctPosition;
     private SpriteRenderer _sprite;
