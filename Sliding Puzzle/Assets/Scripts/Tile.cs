@@ -5,7 +5,7 @@ public class Tile : MonoBehaviour {
     private Vector3 _correctPosition;
     private SpriteRenderer _sprite;
 
-    private void Start() {
+    private void Awake() {
         _targetPosition = transform.position;
         _correctPosition = transform.position;
         _sprite = GetComponent<SpriteRenderer>();
@@ -13,7 +13,7 @@ public class Tile : MonoBehaviour {
 
     private void Update() {
         transform.position = Vector3.Lerp(transform.position, _targetPosition, 0.05f);
-        //_sprite.color = (_targetPosition == _correctPosition) ? Color.green : Color.white;
+        _sprite.color = (_targetPosition == _correctPosition) ? Color.green : Color.white;
     }
 
     public Vector3 GetTargetPosition() => _targetPosition;
