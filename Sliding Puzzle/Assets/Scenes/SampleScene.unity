@@ -4444,7 +4444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74de1cf65fcf54b4090e69fc5f36568e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySpace: {fileID: 1939278330}
 --- !u!4 &1250608771
 Transform:
   m_ObjectHideFlags: 0
