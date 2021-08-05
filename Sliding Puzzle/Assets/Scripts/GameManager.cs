@@ -1,57 +1,42 @@
+using System;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour {
+    public EventHandler FinishGame;
+    private static GameManager _instance;
     [SerializeField] private Tile[] _tiles;
     [SerializeField] private GameObject emptySpace;
-    private int _emptySpaceIndex = 15;
+    private int _emptySpaceIndex;
     private Camera _camera;
     private bool _gameOver = false;
+    private float _gameTime = 0.0f;
+    private int  _gameMovements = 0;
 
+    #region Unity Methods
+
+    private void Awake() {
+        _instance = this;
+    }
     private void Start() {
         _camera = Camera.main;
+        _emptySpaceIndex = _tiles.Length - 1;
         Suffle();
     }
-
     private void Update() {
         if(!_gameOver){
+            _gameTime += Time.deltaTime;
             if(Input.GetMouseButtonDown(0)) {
-                Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-                if(hit) {
-                    //If not rounded, when the tile is moved, the distance is 5'9999999 or 6'000002 and dont move again
-                    int distance = Mathf.RoundToInt(Vector2.Distance(emptySpace.transform.position, hit.transform.position));
-
-                    if(distance <= 6) {
-                        // Move tile
-                        Vector2 lastEmptySpacePosition = emptySpace.transform.position;
-                        Tile tile = hit.transform.GetComponent<Tile>();
-                        emptySpace.transform.position = tile.GetTargetPosition();
-                        tile.SetTargetPosition(lastEmptySpacePosition);
-                        
-                        // Move tile in the array
-                        int tileIndex = FindIndex(tile);
-                        _tiles[_emptySpaceIndex] = _tiles[tileIndex];
-                        _tiles[tileIndex] = null;
-                        _emptySpaceIndex = tileIndex;
-                    }
-                }
+                MoveTile();
             }
-            //Igual deberia ir dentro del click
             CheckGameOver();
         }
     }
 
+    #endregion
+
+    #region Utility Methods
+
     private void Suffle() {
-        /*
-        if(_emptySpaceIndex != 15) {
-            Debug.Log("no se xd");
-            var tileOn15LastPos = _tiles[15].GetTargetPosition();
-            _tiles[15].SetTargetPosition(emptySpace.transform.position);
-            emptySpace.transform.position = tileOn15LastPos;
-            _tiles[_emptySpaceIndex] = _tiles[15];
-            _tiles[15] = null;
-            _emptySpaceIndex = 15;
-        }*/
         int invertion;
         do{
             for(int x = 0; x < _tiles.Length - 1; x++) {
@@ -68,17 +53,6 @@ public class GameManager : MonoBehaviour {
             invertion = GetInversions();
             //Debug.Log("Puzzle suffled");
         } while(invertion % 2 == 0);
-    }
-
-    private int FindIndex(Tile tile) {
-        for(int x = 0; x < _tiles.Length; x++) {
-            if(_tiles[x] != null) {
-                if(_tiles[x] == tile) {
-                    return x;
-                }
-            }
-        }
-        return -1;
     }
 
     // If GetInversions%2 == 0, the game is solvable
@@ -98,6 +72,42 @@ public class GameManager : MonoBehaviour {
         return inversions;
     }
 
+    private void MoveTile() {
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+        if(hit) {
+            //If not rounded, when the tile is moved, the distance is 5'9999999 or 6'000002 and dont move again
+            int distance = Mathf.RoundToInt(Vector2.Distance(emptySpace.transform.position, hit.transform.position));
+
+            if(distance <= 6) {
+                // Move tile
+                Vector2 lastEmptySpacePosition = emptySpace.transform.position;
+                Tile tile = hit.transform.GetComponent<Tile>();
+                emptySpace.transform.position = tile.GetTargetPosition();
+                tile.SetTargetPosition(lastEmptySpacePosition);
+                
+                // Move tile in the array
+                int tileIndex = FindIndex(tile);
+                _tiles[_emptySpaceIndex] = _tiles[tileIndex];
+                _tiles[tileIndex] = null;
+                _emptySpaceIndex = tileIndex;
+
+                _gameMovements++;
+            }
+        }
+    }
+
+    private int FindIndex(Tile tile) {
+        for(int x = 0; x < _tiles.Length; x++) {
+            if(_tiles[x] != null) {
+                if(_tiles[x] == tile) {
+                    return x;
+                }
+            }
+        }
+        return -1;
+    }
+
     private void CheckGameOver() {
         int correctTiles = 0;
         for(int x = 0; x < _tiles.Length; x++) {
@@ -107,9 +117,32 @@ public class GameManager : MonoBehaviour {
                 }
             }
         }
+        
         if(correctTiles == _tiles.Length - 1) {
             _gameOver = true;
-            Debug.Log("You won!");
+            if(FinishGame != null) FinishGame(this, EventArgs.Empty);
+            Debug.Log("Game Over");
+        }
+
+        if(Input.GetMouseButton(1)) {
+            _gameOver = true;
+            if(FinishGame != null) FinishGame(this, EventArgs.Empty);
         }
     }
+
+    #endregion
+
+    public static GameManager GetInstance() => _instance;
+    public float GetGameTime() => _gameTime;
+
+    public string GetMinutes() {
+        float minutes = Mathf.Floor(_gameTime / 60);
+        return (minutes < 10 ? "0" : "") + minutes.ToString();
+    }
+
+    public string GetSeconds() {
+        float seconds = Mathf.Floor(_gameTime % 60);
+        return (seconds < 10 ? "0" : "") + seconds.ToString();
+    }
+    public int GetGameMovements() => _gameMovements;
 }
