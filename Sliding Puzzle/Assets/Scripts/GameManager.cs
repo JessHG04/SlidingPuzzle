@@ -1,11 +1,14 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
+
 public class GameManager : MonoBehaviour {
     public EventHandler FinishGame;
     private static GameManager _instance;
-    [SerializeField] private Tile[] _tiles;
-    [SerializeField] private GameObject emptySpace;
+    private List<Tile> _tiles = new List<Tile>();
+    private GameObject emptySpace;
     private int _emptySpaceIndex;
     private Camera _camera;
     private bool _gameOver = false;
@@ -19,7 +22,10 @@ public class GameManager : MonoBehaviour {
     }
     private void Start() {
         _camera = Camera.main;
-        _emptySpaceIndex = _tiles.Length - 1;
+        emptySpace = GameObject.Find("Empty Space");
+        _tiles = GameObject.Find("Tiles").GetComponentsInChildren<Tile>().ToList();
+        _emptySpaceIndex = _tiles.Count;
+        _tiles.Add(null);
         Suffle();
     }
     private void Update() {
@@ -39,10 +45,10 @@ public class GameManager : MonoBehaviour {
     private void Suffle() {
         int invertion;
         do{
-            for(int x = 0; x < _tiles.Length - 1; x++) {
+            for(int x = 0; x < _tiles.Count - 1; x++) {
                 if(_tiles[x] != null) {
                     var lastPost = _tiles[x].GetTargetPosition();
-                    int randomIndex = Random.Range(0, _tiles.Length - 1);
+                    int randomIndex = Random.Range(0, _tiles.Count - 1);
                     _tiles[x].SetTargetPosition(_tiles[randomIndex].GetTargetPosition());
                     _tiles[randomIndex].SetTargetPosition(lastPost);
                     Tile tile = _tiles[x];
@@ -58,9 +64,9 @@ public class GameManager : MonoBehaviour {
     // If GetInversions%2 == 0, the game is solvable
     private int GetInversions() {
         int inversions = 0;
-        for(int x = 0; x < _tiles.Length; x++) {
+        for(int x = 0; x < _tiles.Count; x++) {
             int thisTileInvertion = 0;
-            for(int y = x; y < _tiles.Length; y++) {
+            for(int y = x; y < _tiles.Count; y++) {
                 if(_tiles[y] != null) {
                     if(_tiles[x].id > _tiles[y].id) {
                         thisTileInvertion++;
@@ -98,7 +104,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private int FindIndex(Tile tile) {
-        for(int x = 0; x < _tiles.Length; x++) {
+        for(int x = 0; x < _tiles.Count; x++) {
             if(_tiles[x] != null) {
                 if(_tiles[x] == tile) {
                     return x;
@@ -110,7 +116,7 @@ public class GameManager : MonoBehaviour {
 
     private void CheckGameOver() {
         int correctTiles = 0;
-        for(int x = 0; x < _tiles.Length; x++) {
+        for(int x = 0; x < _tiles.Count; x++) {
             if(_tiles[x] != null) {
                 if (_tiles[x].IsInRightPlace()) {
                     correctTiles++;
@@ -118,7 +124,7 @@ public class GameManager : MonoBehaviour {
             }
         }
         
-        if(correctTiles == _tiles.Length - 1) {
+        if(correctTiles == _tiles.Count - 1) {
             _gameOver = true;
             if(FinishGame != null) FinishGame(this, EventArgs.Empty);
             Debug.Log("Game Over");
