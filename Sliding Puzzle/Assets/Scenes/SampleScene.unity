@@ -1743,8 +1743,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ResultsWindow, Assembly-CSharp
+      - m_Target: {fileID: 141204687}
+        m_TargetAssemblyTypeName: SelectPuzzleWindow, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:
@@ -8219,7 +8219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74de1cf65fcf54b4090e69fc5f36568e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tiles: []
 --- !u!4 &1250608771
 Transform:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
         ShowingResults,
     }
     private static GameManager _instance;
-    public List<Tile> _tiles = new List<Tile>();
+    private List<Tile> _tiles = new List<Tile>();
     private GameObject _emptySpace;
     private GameObject _background;
     private int _emptySpaceIndex;
@@ -36,19 +36,17 @@ public class GameManager : MonoBehaviour {
         SelectPuzzleWindow.GetInstance().StartGame += GameStarted;
         _camera = Camera.main;
         _gameState = State.WaitingToStart;
-        //Suffle();
     }
     private void Update() {
         switch(_gameState) {
             case State.WaitingToStart:
                 break;
             case State.Playing:
-                Debug.Log("Playing");
                 _gameTime += Time.deltaTime;
                 if(Input.GetMouseButtonDown(0)) {
                     MoveTile();
                 }
-                //CheckGameOver();
+                CheckGameOver();
                 break;
             case State.ShowingResults:
                 break;
@@ -90,8 +88,8 @@ public class GameManager : MonoBehaviour {
         }
         _emptySpaceIndex = _tiles.Count;
         _tiles.Add(null);
-
         _gameState = State.Playing;
+        Suffle();
     }
     public void Suffle() {
         int invertion;
@@ -201,6 +199,6 @@ public class GameManager : MonoBehaviour {
         return (seconds < 10 ? "0" : "") + seconds.ToString();
     }
     public int GetGameMovements() => _gameMovements;
-
+    public State GetGameState() => _gameState;
     public void SetPuzzleType(PuzzleType type) => _puzzleType = type;
 }
