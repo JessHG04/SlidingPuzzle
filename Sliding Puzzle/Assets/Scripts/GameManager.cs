@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
     private Camera _camera;
     private float _gameTime = 0.0f;
     private int _gameMovements = 0;
+    private int _minMoves = 0;
     private State _gameState;
     private PuzzleType _puzzleType;
 
@@ -90,9 +91,10 @@ public class GameManager : MonoBehaviour {
         _tiles.Add(null);
         _gameState = State.Playing;
         Suffle();
+        Debug.Log("Min moves: " + _minMoves);
     }
     public void Suffle() {
-        int invertion;
+        int inversions;
         do{
             for(int x = 0; x < _tiles.Count - 1; x++) {
                 if(_tiles[x] != null) {
@@ -105,9 +107,9 @@ public class GameManager : MonoBehaviour {
                     _tiles[randomIndex] = tile;
                 }
             }
-            invertion = GetInversions();
+            inversions = GetInversions();
             //Debug.Log("Puzzle suffled");
-        } while(invertion % 2 == 0);
+        } while(inversions % 2 != 0);
     }
 
     // If GetInversions%2 == 0, the game is solvable
@@ -124,6 +126,8 @@ public class GameManager : MonoBehaviour {
             }
             inversions += thisTileInvertion;
         }
+        Debug.Log("Inversions:" + inversions);
+        _minMoves = inversions * 2;
         return inversions;
     }
 
