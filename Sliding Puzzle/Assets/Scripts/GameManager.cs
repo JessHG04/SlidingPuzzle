@@ -6,14 +6,26 @@ using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour {
     public EventHandler FinishGame;
+    public enum PuzzleType {
+        Puzzle3x3,
+        Puzzle4x4,
+        Puzzle5x5,
+    }
+    public enum State{
+        WaitingToStart,
+        Playing,
+        ShowingResults,
+    }
     private static GameManager _instance;
-    private List<Tile> _tiles = new List<Tile>();
-    private GameObject emptySpace;
+    public List<Tile> _tiles = new List<Tile>();
+    private GameObject _emptySpace;
+    private GameObject _background;
     private int _emptySpaceIndex;
     private Camera _camera;
-    private bool _gameOver = false;
     private float _gameTime = 0.0f;
-    private int  _gameMovements = 0;
+    private int _gameMovements = 0;
+    private State _gameState;
+    private PuzzleType _puzzleType;
 
     #region Unity Methods
 
@@ -21,20 +33,25 @@ public class GameManager : MonoBehaviour {
         _instance = this;
     }
     private void Start() {
+        SelectPuzzleWindow.GetInstance().StartGame += GameStarted;
         _camera = Camera.main;
-        emptySpace = GameObject.Find("Empty Space");
-        _tiles = GameObject.Find("Tiles").GetComponentsInChildren<Tile>().ToList();
-        _emptySpaceIndex = _tiles.Count;
-        _tiles.Add(null);
-        Suffle();
+        _gameState = State.WaitingToStart;
+        //Suffle();
     }
     private void Update() {
-        if(!_gameOver){
-            _gameTime += Time.deltaTime;
-            if(Input.GetMouseButtonDown(0)) {
-                MoveTile();
-            }
-            CheckGameOver();
+        switch(_gameState) {
+            case State.WaitingToStart:
+                break;
+            case State.Playing:
+                Debug.Log("Playing");
+                _gameTime += Time.deltaTime;
+                if(Input.GetMouseButtonDown(0)) {
+                    MoveTile();
+                }
+                //CheckGameOver();
+                break;
+            case State.ShowingResults:
+                break;
         }
     }
 
@@ -42,7 +59,41 @@ public class GameManager : MonoBehaviour {
 
     #region Utility Methods
 
-    private void Suffle() {
+    private void GameStarted(object sender, EventArgs e) {
+        _emptySpace = GameObject.Find("Empty Space");
+        _background = GameObject.Find("Background Square");
+        
+        switch(_puzzleType) {
+            case PuzzleType.Puzzle3x3:
+                _tiles = GameObject.Find("Tiles 3x3").GetComponentsInChildren<Tile>().ToList();
+                GameObject.Find("Tiles 4x4").SetActive(false);
+                GameObject.Find("Tiles 5x5").SetActive(false);
+                _emptySpace.transform.position = new Vector3(6.0f, -6.0f, -1.0f);
+                _background.transform.localScale = new Vector3(3.15f, 3.15f, 1.0f);
+                break;
+
+            case PuzzleType.Puzzle4x4:
+                _tiles = GameObject.Find("Tiles 4x4").GetComponentsInChildren<Tile>().ToList();
+                GameObject.Find("Tiles 3x3").SetActive(false);
+                GameObject.Find("Tiles 5x5").SetActive(false);
+                _emptySpace.transform.position = new Vector3(9.0f, -9.0f, -1.0f);
+                _background.transform.localScale = new Vector3(4.15f, 4.15f, 1.0f);
+                break;
+
+            case PuzzleType.Puzzle5x5:
+                _tiles = GameObject.Find("Tiles 5x5").GetComponentsInChildren<Tile>().ToList();
+                GameObject.Find("Tiles 3x3").SetActive(false);
+                GameObject.Find("Tiles 4x4").SetActive(false);
+                _emptySpace.transform.position = new Vector3(12.0f, -12.0f, -1.0f);
+                _background.transform.localScale = new Vector3(5.15f, 5.15f, 1.0f);
+                break;
+        }
+        _emptySpaceIndex = _tiles.Count;
+        _tiles.Add(null);
+
+        _gameState = State.Playing;
+    }
+    public void Suffle() {
         int invertion;
         do{
             for(int x = 0; x < _tiles.Count - 1; x++) {
@@ -83,13 +134,13 @@ public class GameManager : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
         if(hit) {
             //If not rounded, when the tile is moved, the distance is 5'9999999 or 6'000002 and dont move again
-            int distance = Mathf.RoundToInt(Vector2.Distance(emptySpace.transform.position, hit.transform.position));
+            int distance = Mathf.RoundToInt(Vector2.Distance(_emptySpace.transform.position, hit.transform.position));
 
             if(distance <= 6) {
                 // Move tile
-                Vector2 lastEmptySpacePosition = emptySpace.transform.position;
+                Vector2 lastEmptySpacePosition = _emptySpace.transform.position;
                 Tile tile = hit.transform.GetComponent<Tile>();
-                emptySpace.transform.position = tile.GetTargetPosition();
+                _emptySpace.transform.position = tile.GetTargetPosition();
                 tile.SetTargetPosition(lastEmptySpacePosition);
                 
                 // Move tile in the array
@@ -125,13 +176,13 @@ public class GameManager : MonoBehaviour {
         }
         
         if(correctTiles == _tiles.Count - 1) {
-            _gameOver = true;
+            _gameState = State.ShowingResults;
             if(FinishGame != null) FinishGame(this, EventArgs.Empty);
             Debug.Log("Game Over");
         }
 
         if(Input.GetMouseButton(1)) {
-            _gameOver = true;
+            _gameState = State.ShowingResults;
             if(FinishGame != null) FinishGame(this, EventArgs.Empty);
         }
     }
@@ -140,7 +191,6 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager GetInstance() => _instance;
     public float GetGameTime() => _gameTime;
-
     public string GetMinutes() {
         float minutes = Mathf.Floor(_gameTime / 60);
         return (minutes < 10 ? "0" : "") + minutes.ToString();
@@ -151,4 +201,6 @@ public class GameManager : MonoBehaviour {
         return (seconds < 10 ? "0" : "") + seconds.ToString();
     }
     public int GetGameMovements() => _gameMovements;
+
+    public void SetPuzzleType(PuzzleType type) => _puzzleType = type;
 }
