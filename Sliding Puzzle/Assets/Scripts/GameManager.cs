@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour {
     private Camera _camera;
     private float _gameTime = 0.0f;
     private int _gameMovements = 0;
-    private int _minMoves = 0;
     private State _gameState;
     private PuzzleType _puzzleType;
 
@@ -65,6 +64,8 @@ public class GameManager : MonoBehaviour {
         switch(_puzzleType) {
             case PuzzleType.Puzzle3x3:
                 _tiles = GameObject.Find("Tiles 3x3").GetComponentsInChildren<Tile>().ToList();
+                Board.GetInstance().SetRows(3);
+                Board.GetInstance().SetColumns(3);
                 GameObject.Find("Tiles 4x4").SetActive(false);
                 GameObject.Find("Tiles 5x5").SetActive(false);
                 _emptySpace.transform.position = new Vector3(6.0f, -6.0f, -1.0f);
@@ -73,6 +74,8 @@ public class GameManager : MonoBehaviour {
 
             case PuzzleType.Puzzle4x4:
                 _tiles = GameObject.Find("Tiles 4x4").GetComponentsInChildren<Tile>().ToList();
+                Board.GetInstance().SetRows(4);
+                Board.GetInstance().SetColumns(4);
                 GameObject.Find("Tiles 3x3").SetActive(false);
                 GameObject.Find("Tiles 5x5").SetActive(false);
                 _emptySpace.transform.position = new Vector3(9.0f, -9.0f, -1.0f);
@@ -81,6 +84,8 @@ public class GameManager : MonoBehaviour {
 
             case PuzzleType.Puzzle5x5:
                 _tiles = GameObject.Find("Tiles 5x5").GetComponentsInChildren<Tile>().ToList();
+                Board.GetInstance().SetRows(5);
+                Board.GetInstance().SetColumns(5);
                 GameObject.Find("Tiles 3x3").SetActive(false);
                 GameObject.Find("Tiles 4x4").SetActive(false);
                 _emptySpace.transform.position = new Vector3(12.0f, -12.0f, -1.0f);
@@ -91,7 +96,8 @@ public class GameManager : MonoBehaviour {
         _tiles.Add(null);
         _gameState = State.Playing;
         Suffle();
-        Debug.Log("Min moves: " + _minMoves);
+        Board.GetInstance().InitList(_tiles);
+        //Debug.Log("Min moves: " + _minMoves);
     }
     public void Suffle() {
         int inversions;
@@ -127,7 +133,6 @@ public class GameManager : MonoBehaviour {
             inversions += thisTileInvertion;
         }
         Debug.Log("Inversions:" + inversions);
-        _minMoves = inversions * 2;
         return inversions;
     }
 
@@ -187,6 +192,19 @@ public class GameManager : MonoBehaviour {
             _gameState = State.ShowingResults;
             if(FinishGame != null) FinishGame(this, EventArgs.Empty);
         }
+    }
+
+    //  Calculate the min moves to solve the puzzle
+    private int CalculateMinMoves() {
+        int minMoves = 0;
+        Queue<List<List<int>>> q = new Queue<List<List<int>>>();
+        for(int x = 0; x < _tiles.Count; x++) {
+            
+
+        }
+
+
+        return minMoves;
     }
 
     #endregion
