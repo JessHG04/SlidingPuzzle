@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour {
             }
             inversions += thisTileInvertion;
         }
-        Debug.Log("Inversions:" + inversions);
+        //Debug.Log("Inversions:" + inversions);
         return inversions;
     }
 
@@ -172,17 +172,8 @@ public class GameManager : MonoBehaviour {
         return -1;
     }
 
-    private void CheckGameOver() {
-        int correctTiles = 0;
-        for(int x = 0; x < _tiles.Count; x++) {
-            if(_tiles[x] != null) {
-                if (_tiles[x].IsInRightPlace()) {
-                    correctTiles++;
-                }
-            }
-        }
-        
-        if(correctTiles == _tiles.Count - 1) {
+    private void CheckGameOver() {        
+        if(CheckTiles()) {
             _gameState = State.ShowingResults;
             if(FinishGame != null) FinishGame(this, EventArgs.Empty);
             Debug.Log("Game Over");
@@ -194,6 +185,17 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public bool CheckTiles() {
+        int correctTiles = 0;
+        for(int x = 0; x < _tiles.Count; x++) {
+            if(_tiles[x] != null) {
+                if (_tiles[x].IsInRightPlace()) {
+                    correctTiles++;
+                }
+            }
+        }
+        return correctTiles == _tiles.Count - 1;
+    }
     //  Calculate the min moves to solve the puzzle
     private int CalculateMinMoves() {
         int minMoves = 0;
