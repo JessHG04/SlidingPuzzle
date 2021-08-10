@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour {
         if(CheckTiles()) {
             _gameState = State.ShowingResults;
             if(FinishGame != null) FinishGame(this, EventArgs.Empty);
-            Debug.Log("Game Over");
+            //Debug.Log("Game Over");
         }
 
         if(Input.GetMouseButton(1)) {

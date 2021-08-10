@@ -6,26 +6,35 @@ public class Board : MonoBehaviour {
     private int _rows;
     private int _columns;
     private int _minMoves = 0;
-    private int[][] _dir = new int[][] { new int[] { 1, 0 }, new int[] { -1, 0 }, new int[] { 0, 1 }, new int[] { 0, -1 } };
-    private List<int> _boardList = new List<int>();
-
+    //private int[][] _dir = new int[][] { new int[] { 1, 0 }, new int[] { -1, 0 }, new int[] { 0, 1 }, new int[] { 0, -1 } };
+    private int[] _dir = new int[] { 1, 0, -1, 0, 0, 1, 0, -1 };
+    private int[][] _boardList;
+    private string _sGoal;
+    private string _sStart;
     private void Awake() {
         _instance = this;
     }
 
     public void InitList(List<Tile> list) {
-        for(int x = 0; x < list.Count; x++) {
-            if(list[x] != null){
-                _boardList.Add(list[x].id);
-            }else {
-                _boardList.Add(0);
+        _boardList = new int[_rows][];
+        for (int i = 0; i < _rows; i++) {
+            _boardList[i] = new int[_columns];
+        }
+
+        for(int i = 0; i < _rows; i++) {
+            for(int j = 0; j < _columns; j++) {
+                if(list[i * _columns + j] != null){
+                    _boardList[i][j] = list[i * _columns + j].id;
+                }else{
+                    _boardList[i][j] = 0;
+                }
             }
         }
 
-        CalculateMinMoves();
-        Debug.Log("Min moves: " + _minMoves);
+        //SeeBoardlist();
         
-       
+        //CalculateMinMoves();
+        //Debug.Log("Min moves: " + _minMoves);
     }
 
     private void SeeList(List<Tile> board) {
@@ -41,11 +50,19 @@ public class Board : MonoBehaviour {
 
     private void SeeBoardlist() {
         // See Board List
-        Debug.Log("Board list");
-        for(int i = 0; i < _boardList.Count; i++) {
-            Debug.Log(_boardList[i]);
+        //Debug.Log("Board list");
+        for(int i = 0; i < _boardList.Length; i++) {
+            Debug.Log("Fila: " + i);
+            for(int j = 0; j < _boardList[i].Length; j++) {
+                Debug.Log(_boardList[i][j]);
+            }
         }
     }
+
+    private void CalculateMinMoves() {
+        Queue<int> queue = new Queue<int>();
+    }
+
 
     /*public void CalculateMinMoves(){
         Queue <List<List<Tile>>> q = new Queue<List<List<Tile>>>();
@@ -104,7 +121,7 @@ public class Board : MonoBehaviour {
             
         }
     }*/
-
+    /*
     public int CalculateMinMoves() {
         int movements = 0;
         if(GameManager.GetInstance().CheckTiles()) return movements;
@@ -165,6 +182,7 @@ public class Board : MonoBehaviour {
         return movements;
 
     }
+    */
 
     public void SetRows(int rows) => _rows = rows;
     public void SetColumns(int columns) => _columns = columns;
