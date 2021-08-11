@@ -19,7 +19,7 @@ public class ResultsWindow : MonoBehaviour {
     private void GameFinished(object sender, EventArgs e) {
         _timeText.text = "Time: " + GameManager.GetInstance().GetMinutes().ToString() + ":" + GameManager.GetInstance().GetSeconds().ToString();
         _movementsText.text = "Movements: " + GameManager.GetInstance().GetGameMovements().ToString();
-        //_scoreText.text = "Score: " + GameManager.GetInstance().GetGameScore().ToString();
+        _scoreText.text = "Score: " + GameManager.GetInstance().GetScore().ToString();
         gameObject.SetActive(true);
     }
 
