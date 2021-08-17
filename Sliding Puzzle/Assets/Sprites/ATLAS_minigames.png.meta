@@ -1,0 +1,972 @@
+fileFormatVersion: 2
+guid: da9861d88a98b904f90b8d9001a6f62a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -965655532521436718
+    second: ATLAS_minigames_0
+  - first:
+      213: -1758634786744285353
+    second: ATLAS_minigames_1
+  - first:
+      213: 8242670927605275929
+    second: ATLAS_minigames_2
+  - first:
+      213: -7846118199337664017
+    second: ATLAS_minigames_3
+  - first:
+      213: -6697406817635669188
+    second: ATLAS_minigames_4
+  - first:
+      213: 1493751045442964397
+    second: ATLAS_minigames_5
+  - first:
+      213: 8296503644142455942
+    second: ATLAS_minigames_6
+  - first:
+      213: 7786672367160319660
+    second: ATLAS_minigames_7
+  - first:
+      213: -9008403530413856547
+    second: ATLAS_minigames_8
+  - first:
+      213: -1574117928195321795
+    second: ATLAS_minigames_9
+  - first:
+      213: -4828374339040000043
+    second: ATLAS_minigames_10
+  - first:
+      213: -5685550071230191728
+    second: ATLAS_minigames_11
+  - first:
+      213: -2017127623074771394
+    second: ATLAS_minigames_12
+  - first:
+      213: 2530632824644449472
+    second: ATLAS_minigames_13
+  - first:
+      213: -5347579863836180806
+    second: ATLAS_minigames_14
+  - first:
+      213: 9192679812503376522
+    second: ATLAS_minigames_15
+  - first:
+      213: 7288056043557927261
+    second: ATLAS_minigames_16
+  - first:
+      213: 3960827955312419354
+    second: ATLAS_minigames_17
+  - first:
+      213: -9075954706440994574
+    second: ATLAS_minigames_18
+  - first:
+      213: -443613933896163018
+    second: ATLAS_minigames_19
+  - first:
+      213: -2286857083279546243
+    second: ATLAS_minigames_20
+  - first:
+      213: -371872262596350730
+    second: ATLAS_minigames_21
+  - first:
+      213: -4929453565033396965
+    second: ATLAS_minigames_22
+  - first:
+      213: 3046691462077629121
+    second: ATLAS_minigames_23
+  - first:
+      213: -7107792542442857159
+    second: ATLAS_minigames_24
+  - first:
+      213: -6327200856921871459
+    second: ATLAS_minigames_25
+  - first:
+      213: -7133867662094827494
+    second: ATLAS_minigames_26
+  - first:
+      213: 2487164293117956620
+    second: ATLAS_minigames_27
+  - first:
+      213: -2511731239993999694
+    second: ATLAS_minigames_28
+  - first:
+      213: 4663296218982815870
+    second: ATLAS_minigames_29
+  - first:
+      213: -6313614481126107920
+    second: ATLAS_minigames_30
+  - first:
+      213: -3394528623828247380
+    second: ATLAS_minigames_31
+  - first:
+      213: 4820923737763901936
+    second: ATLAS_minigames_32
+  - first:
+      213: 9202535041965093829
+    second: ATLAS_minigames_33
+  - first:
+      213: -7843094067781189207
+    second: ATLAS_minigames_34
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ATLAS_minigames_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 806
+        width: 74
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d94ba0d86d4992f0800000000000000
+      internalID: -965655532521436718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_1
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 806
+        width: 73
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7574676aaf21897e0800000000000000
+      internalID: -1758634786744285353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_2
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 934
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d1a508989d36270800000000000000
+      internalID: 8242670927605275929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_3
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 930
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe140c6711dfc1390800000000000000
+      internalID: -7846118199337664017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_4
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 937
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3beb86dbf70e03a0800000000000000
+      internalID: -6697406817635669188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_5
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 943
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab0f7e59aedab410800000000000000
+      internalID: 1493751045442964397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_6
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 938
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c48da8b1a132370800000000000000
+      internalID: 8296503644142455942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_7
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 914
+        width: 107
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caed0fa2341df0c60800000000000000
+      internalID: 7786672367160319660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_8
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 793
+        width: 54
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd8ae48b7b8bbf280800000000000000
+      internalID: -9008403530413856547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_9
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 818
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d301857951c972ae0800000000000000
+      internalID: -1574117928195321795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_10
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 817
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7c8e6de1b2efcb0800000000000000
+      internalID: -4828374339040000043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_11
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 782
+        width: 99
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 097a0a3655ed811b0800000000000000
+      internalID: -5685550071230191728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_12
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 792
+        width: 92
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e00003d19b104e0800000000000000
+      internalID: -2017127623074771394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_13
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 824
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c430e9652d9e1320800000000000000
+      internalID: 2530632824644449472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 639
+        width: 129
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe3300527499c5b0800000000000000
+      internalID: -5347579863836180806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_15
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 639
+        width: 129
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a821b26a595f29f70800000000000000
+      internalID: 9192679812503376522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_16
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 643
+        width: 106
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59b86b9b50642560800000000000000
+      internalID: 7288056043557927261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_17
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 735
+        width: 113
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1265dc3a00b7f630800000000000000
+      internalID: 3960827955312419354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_18
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 644
+        width: 102
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0cc0de74bbb0280800000000000000
+      internalID: -9075954706440994574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_19
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 671
+        width: 129
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631a4bc3a77f7d9f0800000000000000
+      internalID: -443613933896163018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_20
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 696
+        width: 113
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78690b59937340e0800000000000000
+      internalID: -2286857083279546243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_21
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 700
+        width: 129
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fcaf1eb528d6daf0800000000000000
+      internalID: -371872262596350730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_22
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 658
+        width: 113
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15c6679910179bb0800000000000000
+      internalID: -4929453565033396965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_23
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 526
+        width: 244
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c24a512eb5084a20800000000000000
+      internalID: 3046691462077629121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_24
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 527
+        width: 239
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93dd582675c0c5d90800000000000000
+      internalID: -7107792542442857159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_25
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 514
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9bef94f7544138a0800000000000000
+      internalID: -6327200856921871459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_26
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 515
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10013e78296ffc90800000000000000
+      internalID: -7133867662094827494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_27
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 606
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02d45d3fbe248220800000000000000
+      internalID: 2487164293117956620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_28
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 596
+        width: 10
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bef7e4beb9842dd0800000000000000
+      internalID: -2511731239993999694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_29
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 516
+        width: 46
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7894e6343b57b040800000000000000
+      internalID: 4663296218982815870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_30
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 571
+        width: 38
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f457b394198168a0800000000000000
+      internalID: -6313614481126107920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_31
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 572
+        width: 39
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac52dc933634e0d0800000000000000
+      internalID: -3394528623828247380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_32
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 519
+        width: 10
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f17aaed89c57e240800000000000000
+      internalID: 4820923737763901936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_33
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 400
+        width: 107
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c3f9611dd8f5bf70800000000000000
+      internalID: 9202535041965093829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_minigames_34
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 400
+        width: 107
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a1cde5ff7bb72390800000000000000
+      internalID: -7843094067781189207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour {
     #endregion
 
     #region Unity Methods
-
     private void Awake() {
         _instance = this;
     }
@@ -65,7 +64,6 @@ public class GameManager : MonoBehaviour {
     #endregion
 
     #region Utility Methods
-
     private void GameStarted(object sender, EventArgs e) {
         _emptySpace = GameObject.Find("Empty Space");
         _background = GameObject.Find("Background Square");

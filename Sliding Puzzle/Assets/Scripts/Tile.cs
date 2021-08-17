@@ -16,7 +16,7 @@ public class Tile : MonoBehaviour {
     private void Update() {
         if(GameManager.GetInstance().GetGameState() == GameManager.State.Playing) {
             transform.position = Vector3.Lerp(transform.position, _targetPosition, 0.05f);
-            _sprite.color = (_targetPosition == _correctPosition) ? Color.green : Color.white;
+            //_sprite.color = (_targetPosition == _correctPosition) ? Color.green : Color.white;
             _inRightPlace = (_targetPosition == _correctPosition);
         }
     }
